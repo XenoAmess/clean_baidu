@@ -5,3 +5,6 @@
 (
 需使用[油猴](https://www.tampermonkey.net//)
 )
+
+## Release发布地址
+https://greasyfork.org/en/scripts/396896-clean-baidu
