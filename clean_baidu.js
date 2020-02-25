@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.4
+// @version      0.0.5
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
@@ -38,5 +38,6 @@ function doIt() {
         oScript.src = "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js";
         document.head.appendChild(oScript);
     }
+    doIt();
     window.onload = window.setInterval(doIt, REFRESH_TIME);
 })();
