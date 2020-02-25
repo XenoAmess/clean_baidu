@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.3
+// @version      0.0.4
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
@@ -14,6 +14,8 @@
 // @grant        none
 // @supportURL   https://github.com/XenoAmess/EnablePIP.git
 // ==/UserScript==
+
+var REFRESH_TIME = 500;
 var STRING_SELECTORS = [];
 STRING_SELECTORS[0] = "div#s_wrap > div#s_main > div#s_mancard_main";
 STRING_SELECTORS[1] = "div.blank-frame > div.center-content";
@@ -36,5 +38,5 @@ function doIt() {
         oScript.src = "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js";
         document.head.appendChild(oScript);
     }
-    doIt();
+    window.onload = window.setInterval(doIt, REFRESH_TIME);
 })();
