@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.5
+// @version      0.0.6
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
@@ -22,6 +22,7 @@ STRING_SELECTORS[1] = "div.blank-frame > div.center-content";
 STRING_SELECTORS[2] = "div.ad-block";
 STRING_SELECTORS[3] = "div.cr-content > div.FYB_RD";
 STRING_SELECTORS[4] = "div#content_right > div.bdvideo-entry";
+STRING_SELECTORS[5] = "a.index-banner.square-banner-bgicon";
 
 
 function doIt() {
