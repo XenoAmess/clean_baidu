@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.1
+// @version      0.0.2
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
 // @match        https://www.baidu.com/*
 // @match        http://m.baidu.com/*
 // @match        https://m.baidu.com/*
+// @match        http://wap.baidu.com/*
+// @match        https://wap.baidu.com/*
 // @run-at       document-end
 // @grant        none
 // @supportURL   https://github.com/XenoAmess/EnablePIP.git
