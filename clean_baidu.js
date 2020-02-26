@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.7
+// @version      0.0.8
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
@@ -10,7 +10,7 @@
 // @match        https://m.baidu.com/*
 // @match        http://wap.baidu.com/*
 // @match        https://wap.baidu.com/*
-// @run-at       document-start
+// @run-at       document-body
 // @grant        none
 // @supportURL   https://github.com/XenoAmess/EnablePIP.git
 // ==/UserScript==
@@ -27,16 +27,26 @@ STRING_SELECTORS[5] = "a.index-banner.square-banner-bgicon";
 function preProcess() {
     var cssString = "";
     for (var i = 0; i < STRING_SELECTORS.length; i++) {
-        cssString += STRING_SELECTORS[i] + ' {display: none !important}\n';
+        cssString += STRING_SELECTORS[i] + ' {display: none !important} ';
     }
-    var styleSheet = document.createElement("style");
-    styleSheet.type = "text/css";
+
+    var styleSheet = document.createElement('style');
+    styleSheet.type = 'text/css';
     styleSheet.rel = 'stylesheet';
-    styleSheet.innerText = cssString
-    document.head.appendChild(styleSheet)
+    styleSheet.innerText = cssString;
+    var htmlSelect = document.getElementsByTagName('html');
+    if (htmlSelect.length >= 0) {
+        htmlSelect[0].appendChild(styleSheet);
+    }
 }
 
 function doIt() {
+    if (!window.jQuery) {
+        var oScript = document.createElement('script');
+        oScript.type = "text/javascript";
+        oScript.src = "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js";
+        document.head.appendChild(oScript);
+    }
     try {
         for (var i = 0; i < STRING_SELECTORS.length; i++) {
             $(STRING_SELECTORS[i]).remove();
@@ -47,12 +57,6 @@ function doIt() {
 
 (function () {
     'use strict';
-    if (!window.jQuery) {
-        var oScript = document.createElement('script');
-        oScript.type = "text/javascript";
-        oScript.src = "//s1.hdslb.com/bfs/static/jinkela/long/js/jquery/jquery1.7.2.min.js";
-        document.head.appendChild(oScript);
-    }
     preProcess();
     window.onload = window.setInterval(doIt, REFRESH_TIME);
 })();
