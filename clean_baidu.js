@@ -12,7 +12,7 @@
 // @match        https://wap.baidu.com/*
 // @run-at       document-body
 // @grant        none
-// @supportURL   https://github.com/XenoAmess/EnablePIP.git
+// @supportURL   https://github.com/XenoAmess/clean_baidu.git
 // ==/UserScript==
 
 var REFRESH_TIME = 500;
