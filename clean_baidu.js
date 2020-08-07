@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.9
+// @version      0.0.10
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
+// @license      MIT
 // @match        http://www.baidu.com/*
 // @match        https://www.baidu.com/*
 // @match        http://m.baidu.com/*
@@ -24,6 +25,7 @@ STRING_SELECTORS.push("div.cr-content > div.FYB_RD");
 STRING_SELECTORS.push("div#content_right > div.bdvideo-entry");
 STRING_SELECTORS.push("a.index-banner.square-banner-bgicon");
 STRING_SELECTORS.push("div#s_lm_wrap");
+STRING_SELECTORS.push("a#virus-2020");
 
 function preProcess() {
     var cssString = "";
