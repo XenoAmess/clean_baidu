@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clean_Baidu
 // @namespace    None
-// @version      0.0.8
+// @version      0.0.9
 // @description  干掉百度个人认为多余的内容，让百度看起来像一个搜索引擎该有的样子。
 // @author       XenoAmess
 // @match        http://www.baidu.com/*
@@ -17,12 +17,13 @@
 
 var REFRESH_TIME = 500;
 var STRING_SELECTORS = [];
-STRING_SELECTORS[0] = "div#s_wrap > div#s_main > div#s_mancard_main";
-STRING_SELECTORS[1] = "div.blank-frame > div.center-content";
-STRING_SELECTORS[2] = "div.ad-block";
-STRING_SELECTORS[3] = "div.cr-content > div.FYB_RD";
-STRING_SELECTORS[4] = "div#content_right > div.bdvideo-entry";
-STRING_SELECTORS[5] = "a.index-banner.square-banner-bgicon";
+STRING_SELECTORS.push("div#s_wrap > div#s_main > div#s_mancard_main");
+STRING_SELECTORS.push("div.blank-frame > div.center-content");
+STRING_SELECTORS.push("div.ad-block");
+STRING_SELECTORS.push("div.cr-content > div.FYB_RD");
+STRING_SELECTORS.push("div#content_right > div.bdvideo-entry");
+STRING_SELECTORS.push("a.index-banner.square-banner-bgicon");
+STRING_SELECTORS.push("div#s_lm_wrap");
 
 function preProcess() {
     var cssString = "";
